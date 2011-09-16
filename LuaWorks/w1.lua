@@ -2,7 +2,17 @@
 --
 
 module(..., package.seeall)
+function fact (n)
+if n == 0 then 
+	return 1
+else
+	return n*fact(n-1)
+end
+end
+
 
 run = function()
-   WorkPad1:setText("work1")
+result = fact(12)
+   WorkPad1:setText(result)
+   print (result)
 end
