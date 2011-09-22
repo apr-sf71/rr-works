@@ -14,6 +14,11 @@ local function example(x)
 end
 
 -- write your own function here
+local function Farenheit(Tc)
+   local Tf = (9/5)*Tc+32
+   return Tf
+end
+
 --
 
 
@@ -30,8 +35,10 @@ run = function()
    WorkPad1:setText(eg1 .. ", " .. eg2 .. ", " .. eg3)
 
    -- call your function to do calculation
-
+   local farenheit1 = Farenheit (12) 
+   local farenheit2 = Farenheit (25)
+   local farenheit3 = Farenheit (30)
    -- and put result on WorkPad2
 
-
+   WorkPad2:setText(farenheit1..","..farenheit2..","..farenheit3)
 end
