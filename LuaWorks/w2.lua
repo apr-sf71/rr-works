@@ -40,5 +40,6 @@ run = function()
    local farenheit3 = Farenheit (30)
    -- and put result on WorkPad2
 
-   WorkPad2:setText(farenheit1..","..farenheit2..","..farenheit3)
+   WorkPad2:setText(farenheit1.." °C,"..farenheit2.." °C,"..farenheit3.." °C,")
 end
+
