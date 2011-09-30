@@ -16,8 +16,19 @@ local function towerStart()
 end
 
 local function moveDiskFromTo(diskNo,fromTower, toTower)
-	-- homework
+
+	if (fromTower[#fromTower] ~= diskNo) then
+		return false
+	end
+	if((toTower[#toTower] or 99) < diskNo) then
+		return false
+	end
+	toTower[#toTower+1] = diskNo
+	fromTower[#fromTower] = nil
+	return true
+
 end
+	
 
 
 run = function()
@@ -32,7 +43,7 @@ run = function()
 			(towers["t"..i][3] or " ") )
 	end
 	
-	moveDiskFromTo(1, "t1", "t3")
+	moveDiskFromTo(1, towers["t1"], towers["t3"])
 	for i=1,3 do
 		WorkTable[i+3]:setText("move 1 tower ".. i .. " contain " .. 
 			(towers["t"..i][1] or " ") ..",".. 
@@ -40,7 +51,7 @@ run = function()
 			(towers["t"..i][3] or " ") )
 	end
 	
-	moveDiskFromTo(2, "t1", "t2")
+	moveDiskFromTo(2, towers["t1"], towers["t2"])
 	for i=1,3 do
 		WorkTable[i+6]:setText("move 2 tower ".. i .. " contain " .. 
 			(towers["t"..i][1] or " ") ..",".. 
